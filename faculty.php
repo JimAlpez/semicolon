@@ -69,5 +69,4 @@ $result = $conn->query($sql);
     <script src="components/footer.js"></script>
     <script type="module" src="components/slider.js"></script>
 </body>
-
 </html>
