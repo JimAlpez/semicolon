@@ -1,0 +1,49 @@
+.dashboard_navbar {
+	background: var(--light);
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        bottom: -40px;
+        left: 0;
+        border-radius: 50%;
+        box-shadow: -20px -20px 0 var(--light);
+    }
+    a {
+        color: var(--dark);
+    }
+    .bx.bx-menu {
+        color: var(--dark);
+    }
+    .form-input {
+        input {
+            background: var(--grey);
+            border-radius: 36px 0 0 36px;
+            color: var(--dark);
+        }
+        button {
+            color: var(--light);
+            border-radius: 0 36px 36px 0;
+        }
+    }
+    .switch-mode {
+        background: var(--grey);
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            bottom: 2px;
+            width: calc(25px - 4px);
+            background: var(--blue);
+            border-radius: 50%;
+            transition: all .3s ease;
+        }
+    }
+    #switch-mode:checked + .switch-mode::before {
+        left: calc(100% - (25px - 4px) - 2px);
+    }
+}

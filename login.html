@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="img/cea-logo.jpg" type="image/x-icon" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/main.css" />
+
+    <title>Semicolon | Login</title>
+  </head>
+
+  <body
+    class="bg-[url('img/background.jpg')] bg-cover bg-no-repeat p-2 bg-center min-h-screen grid place-items-center"
+  >
+    <div class="grid sm:grid-cols-3 shadow-lg max-w-[750px] w-full relative">
+      <a
+        href="/"
+        class="absolute top-[15px] left-[15px] font-bold hover:text-[#124d5d] uppercase text-xs hover:scale-[1.05] focus:scale-[1] transition duration-300 ease-in-out"
+      >
+        <i class="bx bxs-home"></i> Home
+      </a>
+      <div class="sm:col-span-2 px-4 py-12 bg-white grid place-items-center">
+        <form
+          class="text-sm font-medium w-3/4 space-y-6"
+          id="login-form"
+          method="POST"
+        >
+          <h1
+            class="text-4xl font-bold text-center text-[#124d5d] uppercase drop-shadow"
+          >
+            Login
+          </h1>
+          <div class="space-y-1">
+            <label class="block text-gray-700" for="username">Username</label>
+            <input
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="username"
+              name="username"
+              type="text"
+              placeholder="Enter your username"
+            />
+          </div>
+          <div class="space-y-1">
+            <label class="block text-gray-700" for="password">Password</label>
+            <input
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="password"
+              name="password"
+              type="password"
+              placeholder="Enter your password"
+            />
+          </div>
+          <div class="text-center font-bold">
+            <input
+              type="submit"
+              name="login"
+              value="Login"
+              class="uppercase text-white bg-[#ffc412d5] hover:bg-[#ffc412] p-2 w-32 cursor-pointer rounded-full shadow-md hover:shadow-lg hover:scale-[1.1] focus:scale-[1] transition duration-300 ease-in-out"
+            />
+          </div>
+        </form>
+      </div>
+      <div
+        class="sm:col-span-1 p-4 bg-[url('img/nwssu-statue.jpg')] bg-no-repeat bg-center bg-cover text-center text-white text-sm font-light space-y-6"
+      >
+        <div class="space-y-2">
+          <h2 class="text-2xl font-bold uppercase italic">Mission</h2>
+          <p>
+            An academic institution providing technological, professional,
+            research, and extension programs to form principled men and women of
+            competencies and skills responsive to local and global development
+            needs.
+          </p>
+        </div>
+        <div class="space-y-2">
+          <h2 class="text-2xl font-bold uppercase italic">Vision</h2>
+          <p>
+            A provider of relevant and quality education to a society where
+            citizens are competent, skilled, dignified, and community-oriented.
+          </p>
+        </div>
+        <div class="space-y-2">
+          <h2 class="text-2xl font-bold uppercase italic">Core Values</h2>
+          <p>Resilience. Integrity. Service. Excellence</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      document
+        .getElementById("login-form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          login();
+        });
+
+      function login() {
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+
+        if (username === "admin" && password === "admin") {
+          sessionStorage.setItem("isLoggedIn", "true");
+          sessionStorage.setItem("successfulLogin", "true");
+          window.location.href = "dashboard.php";
+        } else if (username === "" || password === "") {
+          alert("Please enter both username and password.");
+        } else {
+          alert("Invalid username or password. Please try again.");
+        }
+      }
+    </script>
+  </body>
+</html>

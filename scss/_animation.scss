@@ -1,0 +1,21 @@
+@keyframes show-popup {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -55%);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@keyframes hide-popup {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -55%);
+    }
+}

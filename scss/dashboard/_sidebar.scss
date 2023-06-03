@@ -1,0 +1,61 @@
+.sidebar {
+	background: var(--light);
+	transition: .3s ease;
+	scrollbar-width: none;
+
+    ul li {
+        height: 48px;
+        background: transparent;
+        margin-left: 6px;
+        border-radius: 48px 0 0 48px;
+        padding: 4px;
+        
+        &.active {
+            background: var(--grey);
+            position: relative;
+
+            &::before {
+                top: -40px;
+                box-shadow: 20px 20px 0 var(--grey);
+            }
+            &::after {
+                bottom: -40px;
+                box-shadow: 20px -20px 0 var(--grey);
+            }
+            &::before, &::after {
+                content: '';
+                position: absolute;
+                right: 0;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                z-index: -1;
+            }
+            a {
+                color: var(--blue);
+            }
+        }
+        a {
+            background: var(--light);
+            color: var(--dark);
+            white-space: nowrap;
+
+            &:hover {
+                color: var(--blue);
+            }
+        }
+    }
+    &.hide {
+        width: 60px;
+
+        ~ .content {
+            width: calc(100% - 60px);
+            left: 60px;
+        }
+        ul li a,
+        ul li button {
+            width: calc(48px - (4px * 2));
+            transition: width .3s ease;
+        }
+    }
+}
